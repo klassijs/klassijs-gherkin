@@ -54,7 +54,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@cucumber/cucumber": "^11.0.1",
+    "@cucumber/cucumber": "^12.7.0",
     "@cucumber/messages": "^32.2.0",
     "@stylistic/eslint-plugin": "^3.1.0",
     "@types/chai": "^5.0.0",
