@@ -1,0 +1,36 @@
+import { switchOrSeveritySchema } from '../schemas.js'
+import Schema from '../schema.js'
+import Rule from '../rule.js'
+import { RawSchema, AcceptedSchema } from '../types.js'
+import Document from '../document.js'
+
+export default class GivenAfterBackground implements Rule {
+  public readonly name: string = 'given-after-background'
+
+  public readonly acceptedSchema: AcceptedSchema = switchOrSeveritySchema
+
+  public readonly schema: Schema
+
+  public constructor(rawSchema: RawSchema) {
+    this.schema = new Schema(rawSchema)
+  }
+
+  public async run(document: Document): Promise<void> {
+    const backgrounds = document.feature.children.filter((child) => child.background !== undefined)
+    if (!backgrounds.length) {
+      return
+    }
+
+    document.feature.children.forEach((child): void => {
+      if (!child.scenario) {
+        return
+      }
+
+      child.scenario.steps.forEach((step): void => {
+        if (step.keyword.trim() === 'Given') {
+          document.addError(this, 'Found "Given" in scenario when background exists.', step.location)
+        }
+      })
+    })
+  }
+}

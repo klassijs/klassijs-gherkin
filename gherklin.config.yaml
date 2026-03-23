@@ -1,0 +1,38 @@
+# Gherklin runner config (project root = default lookup location)
+# Use: npx gherklin  (or npm run lint:features)
+
+reporter:
+  - type: 'stdout'
+  - type: 'json'
+    outFile: './reports/gherklin.json'
+  - type: 'html'
+    outFile: './reports/gherklin.html'
+featureDirectory: './tests/acceptance/features'
+rules:
+  indentation:
+    - 'error'
+    - feature: 1
+      background: 3
+      scenario: 3
+      step: 5
+      examples: 5
+      given: 5
+      when: 5
+      then: 5
+      and: 5
+      but: 5
+      exampleTableHeader: 7
+      exampleTableBody: 7
+      scenarioOutline: 3
+      dataTable: 7
+      featureTag: 1
+      scenarioTag: 3
+  new-line-at-eof: 'warn'
+  no-background-only: 'warn'
+  no-empty-file: 'warn'
+  no-trailing-spaces: 'warn'
+  no-unnamed-scenarios: 'warn'
+  aligned-datatables: 'warn'
+  scenario-description: ['error', 10]
+  feature-name-length: ['error', 20]
+fix: true
