@@ -142,10 +142,15 @@ export default class Runner {
                 : [{ type: 'stdout', configDirectory: this.config.configDirectory ?? process.cwd() }];
         const baseDir = this.config.configDirectory ?? process.cwd();
         return configs.map((reporterConfig) => {
-            const merged = {
-                ...reporterConfig,
-                configDirectory: reporterConfig.configDirectory ?? baseDir,
-            };
+		        const merged = {
+			        ...reporterConfig,
+			        baseDir: reporterConfig.baseDir ?? process.cwd(),
+			        configDirectory: reporterConfig.configDirectory ?? process.cwd(),
+		        };
+            // const merged = {
+            //     ...reporterConfig,
+            //     configDirectory: reporterConfig.configDirectory ?? baseDir,
+            // };
             if (merged.outFile && !path.isAbsolute(merged.outFile)) {
                 merged.outFile = path.resolve(process.cwd(), merged.outFile);
             }
