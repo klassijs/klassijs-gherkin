@@ -7,10 +7,10 @@
 
      Given the following feature file
       """
- Feature: Trailing whitespace
-   Scenario: Scenario 1
-     When something happens
-     Then something has happened
+      Feature: Trailing whitespace
+        Scenario: Scenario 1 
+          When something happens
+          Then something has happened
       """
      When Gherklin is ran with the following configuration
       | rules                           |
@@ -18,7 +18,7 @@
      Then there is 1 file with errors
      And the errors are
       | location                  | severity | rule               | message                    |
-      | {"line": 2, "column": 25} | error    | no-trailing-spaces | Found trailing whitespace. |
+      | {"line": 2, "column": 21} | error    | no-trailing-spaces | Found trailing whitespace. |
 
    Scenario: Auto fix
 
@@ -27,10 +27,10 @@
 
      Given the following feature file
       """
- Feature: Trailing whitespace
-   Scenario: Scenario 1
-     When something happens
-     Then something has happened
+      Feature: Trailing whitespace
+        Scenario: Scenario 1 
+          When something happens
+          Then something has happened
       """
      When Gherklin is ran with the following configuration
       | rules                           | fix  |

@@ -3,10 +3,10 @@
    Scenario: Tag does not match format
      Given the following feature file
       """
- Feature: Foo
+      Feature: Foo
         @BadTag
-   Scenario: Bar
-     Given x
+        Scenario: Bar
+          Given x
       """
      When Gherklin is ran with the following configuration
       | rules                              |
@@ -19,10 +19,10 @@
    Scenario: Tag matches format
      Given the following feature file
       """
- Feature: Foo
-        @integration
-   Scenario: Bar
-     Given x
+      Feature: Foo
+             @integration
+        Scenario: Bar
+          Given x
       """
      When Gherklin is ran with the following configuration
       | rules                              |

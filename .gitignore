@@ -4,4 +4,7 @@ cucumber-report.html
 tests/acceptance/tmp
 .idea
 examples/*
+!examples/features/
+!examples/features/**
 .DS_Store
+.pnpm-store

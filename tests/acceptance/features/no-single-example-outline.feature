@@ -3,13 +3,13 @@
    Scenario: Single Example
      Given the following feature file
       """
- Feature: Single Example
-   Scenario Outline:
-     When transmogrification happens
-     Then <PERSON> becomes <OTHER>
-     Examples:
-          | PERSON | OTHER |
-          | Kryten | Human |
+      Feature: Single Example
+        Scenario Outline:
+          When transmogrification happens
+          Then <PERSON> becomes <OTHER>
+          Examples:
+               | PERSON | OTHER |
+               | Kryten | Human |
       """
      When Gherklin is ran with the following configuration
       | rules                               |

@@ -3,11 +3,11 @@
    Scenario: First step is And
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Bar
-     And I am logged in
-     When I do thing
-     Then result
+      Feature: Foo
+        Scenario: Bar
+          And I am logged in
+          When I do thing
+          Then result
       """
      When Gherklin is ran with the following configuration
       | rules                     |
@@ -20,11 +20,11 @@
    Scenario: First step is But
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Bar
-     But I have already done it
-     When I do thing
-     Then result
+      Feature: Foo
+        Scenario: Bar
+          But I have already done it
+          When I do thing
+          Then result
       """
      When Gherklin is ran with the following configuration
       | rules                     |
@@ -37,11 +37,11 @@
    Scenario: First step is Given
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Bar
-     Given I am ready
-     When I do thing
-     Then result
+      Feature: Foo
+        Scenario: Bar
+          Given I am ready
+          When I do thing
+          Then result
       """
      When Gherklin is ran with the following configuration
       | rules                     |

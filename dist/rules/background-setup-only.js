@@ -13,7 +13,7 @@ export default class BackgroundSetupOnly {
                 return;
             }
             child.background.steps.forEach((step) => {
-                if (!['Given', 'And', 'But', '*'].includes(step.keyword.trim())) {
+                if (!['Given', '*'].includes(step.keyword.trim())) {
                     document.addError(this, `Background should only be used for set up. Found "${step.keyword.trim()}".`, step.location);
                 }
             });

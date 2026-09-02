@@ -6,12 +6,12 @@ import { pathToFileURL, fileURLToPath } from 'node:url';
  * then .ts (source, useful during local dev).
  */
 function resolveWithJsThenTs(base, rel) {
-    const asJs = path.resolve(base, `${rel}.js`);
-    if (existsSync(asJs))
-        return asJs;
     const asTs = path.resolve(base, `${rel}.ts`);
     if (existsSync(asTs))
         return asTs;
+    const asJs = path.resolve(base, `${rel}.js`);
+    if (existsSync(asJs))
+        return asJs;
     return null;
 }
 export default class RuleLoader {

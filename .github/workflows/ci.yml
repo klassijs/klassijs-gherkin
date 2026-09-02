@@ -29,15 +29,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: 'npm'
+          cache: 'pnpm'
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Run TypeScript Linting
-        run: npm run eslint
+        run: pnpm run eslint
 
   unit-tests:
     needs: define-matrix
@@ -48,15 +50,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: 'pnpm'
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Run Unit Tests
-        run: npm test
+        run: pnpm test
 
   acceptance-tests:
     needs: define-matrix
@@ -67,15 +71,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: 'pnpm'
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Run Acceptance Tests
-        run: npm run acceptance
+        run: pnpm run acceptance
 
   gherklin:
     needs: define-matrix
@@ -86,12 +92,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: 'pnpm'
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Run Gherklin
-        run: npm run gherklin
+        run: pnpm run gherklin

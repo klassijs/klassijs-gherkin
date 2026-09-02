@@ -2,7 +2,7 @@ export default {
   reporter: {
     type: 'stdout',
   },
-  featureDirectory: './tests/acceptance/features',
+  featureDirectory: './examples/features',
   rules: {
     indentation: [
       'warn',

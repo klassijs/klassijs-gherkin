@@ -3,13 +3,13 @@
    Scenario: Invalid Order
      Given the following feature file
       """
- Feature: Keywords in Logical Order
-   Scenario: Invalid
-     Then something should have happened
-     And something didn't happen
-     When something happens
-     Given I do something
-     And another thing didn't happen
+      Feature: Keywords in Logical Order
+        Scenario: Invalid
+          Then something should have happened
+          And something didn't happen
+          When something happens
+          Given I do something
+          And another thing didn't happen
       """
      When Gherklin is ran with the following configuration
       | rules                               |
@@ -22,12 +22,12 @@
    Scenario: Valid Order
      Given the following feature file
       """
- Feature: Keywords in Logical Order
-   Scenario: Valid
-     Given I do something
-     When something happens
-     Then something should have happened
-     And another thing didn't happen
+      Feature: Keywords in Logical Order
+        Scenario: Valid
+          Given I do something
+          When something happens
+          Then something should have happened
+          And another thing didn't happen
       """
      When Gherklin is ran with the following configuration
       | rules                               |
@@ -37,10 +37,10 @@
    Scenario: Conjunction step
      Given the following feature file
       """
- Feature: Keywords in Logical Order
-   Scenario: Invalid
-     Given I have shades
-     And I have a brand new Mustang
+      Feature: Keywords in Logical Order
+        Scenario: Invalid
+          Given I have shades
+          And I have a brand new Mustang
       """
      When Gherklin is ran with the following configuration
       | rules                               |

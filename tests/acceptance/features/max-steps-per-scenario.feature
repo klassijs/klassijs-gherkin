@@ -3,13 +3,13 @@
    Scenario: Too many steps
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Many steps
-     Given one
-     And two
-     And three
-     When four
-     Then five
+      Feature: Foo
+        Scenario: Many steps
+          Given one
+          And two
+          And three
+          When four
+          Then five
       """
      When Gherklin is ran with the following configuration
       | rules                        |
@@ -22,11 +22,11 @@
    Scenario: Within limit
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Few steps
-     Given one
-     When two
-     Then three
+      Feature: Foo
+        Scenario: Few steps
+          Given one
+          When two
+          Then three
       """
      When Gherklin is ran with the following configuration
       | rules                        |

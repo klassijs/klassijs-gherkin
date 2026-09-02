@@ -3,13 +3,13 @@
    Scenario: Invalid
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: Doing something
-     Given I do something
-     When I do another thing
-     Then I should have done something
-     And another thing
-     But not done nothing
+      Feature: Invalid
+        Scenario: Doing something
+          Given I do something
+          When I do another thing
+          Then I should have done something
+          And another thing
+          But not done nothing
       """
      When Gherklin is ran with the following configuration
       | rules                            |
@@ -22,16 +22,16 @@
    Scenario: Valid
      Given the following feature file
       """
- Feature: Valid
+      Feature: Valid
 
-      This feature has a description that is long enough to pass the minimum length.
+           This feature has a description that is long enough to pass the minimum length.
 
-   Scenario: Doing something
-     Given I do something
-     When I do another thing
-     Then I should have done something
-     And another thing
-     But not done nothing
+        Scenario: Doing something
+          Given I do something
+          When I do another thing
+          Then I should have done something
+          And another thing
+          But not done nothing
       """
      When Gherklin is ran with the following configuration
       | rules                            |

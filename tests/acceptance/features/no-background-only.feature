@@ -3,8 +3,8 @@
    Scenario: Only Background
      Given the following feature file
       """
- Feature: Invalid
-   Background: Something
+      Feature: Invalid
+        Background: Something
       """
      When Gherklin is ran with the following configuration
       | rules                        |
@@ -17,10 +17,10 @@
    Scenario: Background with Scenarios
      Given the following feature file
       """
- Feature: Invalid
-   Background: Something
+      Feature: Invalid
+        Background: Something
 
-   Scenario: Something
+        Scenario: Something
       """
      When Gherklin is ran with the following configuration
       | rules                        |

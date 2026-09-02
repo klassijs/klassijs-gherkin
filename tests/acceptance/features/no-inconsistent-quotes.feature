@@ -3,10 +3,10 @@
    Scenario: ' mixed with "
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: One
-     When I do "something"
-     Then 'something' has happened
+      Feature: Invalid
+        Scenario: One
+          When I do "something"
+          Then 'something' has happened
       """
      When Gherklin is ran with the following configuration
       | rules                            |
@@ -20,10 +20,10 @@
    Scenario: Only ' used
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: One
-     When I do 'something'
-     Then 'something' has happened
+      Feature: Invalid
+        Scenario: One
+          When I do 'something'
+          Then 'something' has happened
       """
      When Gherklin is ran with the following configuration
       | rules                            |
@@ -33,10 +33,10 @@
    Scenario: Only " used
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: One
-     When I do "something"
-     Then "something" has happened
+      Feature: Invalid
+        Scenario: One
+          When I do "something"
+          Then "something" has happened
       """
      When Gherklin is ran with the following configuration
       | rules                            |
@@ -46,10 +46,10 @@
    Scenario: Auto Fix
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: One
-     When I do "something"
-     Then 'something' has happened
+      Feature: Invalid
+        Scenario: One
+          When I do "something"
+          Then 'something' has happened
       """
      When Gherklin is ran with the following configuration
       | rules                            | fix  |
@@ -62,10 +62,10 @@
    Scenario: Auto Fix with Argument
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: One
-     When I do "something"
-     Then 'something' has happened
+      Feature: Invalid
+        Scenario: One
+          When I do "something"
+          Then 'something' has happened
       """
      When Gherklin is ran with the following configuration
       | rules                                      | fix  |

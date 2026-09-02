@@ -3,10 +3,10 @@
    Scenario: Containes Typographer Quotes
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: Doing something
-     When I do “something”
-     Then I did ‘something’
+      Feature: Invalid
+        Scenario: Doing something
+          When I do “something”
+          Then I did ‘something’
       """
      When Gherklin is ran with the following configuration
       | rules                              |
@@ -22,10 +22,10 @@
    Scenario: Auto Fix
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: Doing something
-     When I do “something”
-     Then I did ‘something’
+      Feature: Invalid
+        Scenario: Doing something
+          When I do “something”
+          Then I did ‘something’
       """
      When Gherklin is ran with the following configuration
       | rules                              | fix  |
@@ -39,10 +39,10 @@
    Scenario: Auto Fix with parameter
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: Doing something
-     When I do “something”
-     Then I did ‘something’
+      Feature: Invalid
+        Scenario: Doing something
+          When I do “something”
+          Then I did ‘something’
       """
      When Gherklin is ran with the following configuration
       | rules                                      | fix  |

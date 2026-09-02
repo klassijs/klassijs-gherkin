@@ -3,11 +3,11 @@
    Scenario: Duplicate Features
      Given the following feature file named "invalid-1"
       """
- Feature: Invalid
+      Feature: Invalid
       """
      And the following feature file named "invalid-2"
       """
- Feature: Invalid
+      Feature: Invalid
       """
      When Gherklin is ran with the following configuration
       | rules                      |

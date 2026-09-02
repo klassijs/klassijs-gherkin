@@ -3,8 +3,8 @@
    Scenario: Invalid
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: Doing something but expressing it using a really long title
+      Feature: Invalid
+        Scenario: Doing something but expressing it using a really long title
       """
      When Gherklin is ran with the following configuration
       | rules                        |
@@ -17,8 +17,8 @@
    Scenario: Valid
      Given the following feature file
       """
- Feature: Valid
-   Scenario: Doing something
+      Feature: Valid
+        Scenario: Doing something
       """
      When Gherklin is ran with the following configuration
       | rules                                    |

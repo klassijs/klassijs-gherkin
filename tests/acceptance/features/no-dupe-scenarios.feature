@@ -3,9 +3,9 @@
    Scenario: Duplicate Scenarios
      Given the following feature file named "invalid"
       """
- Feature: Invalid
-   Scenario: One
-   Scenario: One
+      Feature: Invalid
+        Scenario: One
+        Scenario: One
       """
      When Gherklin is ran with the following configuration
       | rules                       |

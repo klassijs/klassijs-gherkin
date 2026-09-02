@@ -55,7 +55,7 @@ function parseArgs(argv: string[]): CliArgs {
     return args
 }
 
-function printHelp() {
+function printHelp(): void {
     console.log(`
 Usage: gherklin [options]
 
@@ -70,7 +70,7 @@ Options:
 `)
 }
 
-async function main() {
+async function main(): Promise<void> {
     const args = parseArgs(process.argv.slice(2))
 
     if (args.cwd) {
