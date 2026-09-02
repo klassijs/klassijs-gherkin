@@ -3,10 +3,10 @@
    Scenario: Unnamed
      Given the following feature file
       """
- Feature: Unnamed
-   Scenario:
-     When something happens
-     Then something has happened
+      Feature: Unnamed
+        Scenario:
+          When something happens
+          Then something has happened
       """
      When Gherklin is ran with the following configuration
       | rules                          |

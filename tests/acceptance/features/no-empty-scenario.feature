@@ -3,8 +3,8 @@
    Scenario: Empty scenario fails
      Given the following feature file
       """
- Feature: Foo
-   Scenario: No steps
+      Feature: Foo
+        Scenario: No steps
       """
      When Gherklin is ran with the following configuration
       | rules                   |
@@ -17,11 +17,11 @@
    Scenario: Scenario with steps passes
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Has steps
-     Given I do something
-     When it happens
-     Then I see result
+      Feature: Foo
+        Scenario: Has steps
+          Given I do something
+          When it happens
+          Then I see result
       """
      When Gherklin is ran with the following configuration
       | rules                   |

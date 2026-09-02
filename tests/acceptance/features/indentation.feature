@@ -3,13 +3,13 @@
    Scenario: Invalid Indentation
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: Doing something
-     Given I do something
-     When I do another thing
-     Then I should have done something
-     And another thing
-     But not done nothing
+      Feature: Invalid
+      Scenario: Doing something
+           Given I do something
+         When I do another thing
+                Then I should have done something
+             And another thing
+       But not done nothing
       """
      When Gherklin is ran with the following configuration
       | rules                                                                                                |
@@ -27,12 +27,12 @@
    Scenario: Invalid Indentation with tables
      Given the following feature file
       """
- Feature: Invalid indentation
-   Scenario Outline: With tables
-     When I have the following Pokemon
+      Feature: Invalid indentation
+        Scenario Outline: With tables
+          When I have the following Pokemon
          | <POKEMON> |
-     Then I win most rounds
-     Examples:
+          Then I win most rounds
+          Examples:
       | POKEMON   |
          | Metapod   |
       | Togepi    |
@@ -54,7 +54,7 @@
      Given the following feature file
       """
          @tag-1
- Feature: Invalid
+      Feature: Invalid
       """
      When Gherklin is ran with the following configuration
       | rules                              |
@@ -67,9 +67,9 @@
    Scenario: Invalid Indentation with scenario tags
      Given the following feature file
       """
- Feature: Invalid
+      Feature: Invalid
               @tag-1
-   Scenario: Doing stuff
+        Scenario: Doing stuff
       """
      When Gherklin is ran with the following configuration
       | rules                              |
@@ -82,13 +82,13 @@
    Scenario: Valid Indentation
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: Doing something
-     Given I do something
-     When I do another thing
-     Then I should have done something
-     And another thing
-     But not done nothing
+       Feature: Invalid
+         Scenario: Doing something
+           Given I do something
+           When I do another thing
+           Then I should have done something
+           And another thing
+           But not done nothing
       """
      When Gherklin is ran with the following configuration
       | rules                                                                                                |
@@ -98,8 +98,8 @@
    Scenario: Auto fix
      Given the following feature file
       """
- Feature: Invalid Tag
-   Scenario Outline: Doing something
+      Feature: Invalid Tag
+        Scenario Outline: Doing something
       """
      When Gherklin is ran with the following configuration
       | rules                                                                                                                       | fix  |

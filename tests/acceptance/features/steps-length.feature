@@ -3,10 +3,10 @@
    Scenario: Fails by design - step text exceeds max length
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: Foo
-     Given short
-     When this step is way too long for the limit we set
+      Feature: Invalid
+        Scenario: Foo
+          Given short
+          When this step is way too long for the limit we set
       """
      When Gherklin is ran with the following configuration
       | rules                    |
@@ -19,11 +19,11 @@
    Scenario: Passes by design - step text within limit
      Given the following feature file
       """
- Feature: Valid
-   Scenario: Foo
-     Given short
-     When a step under limit
-     Then another ok step
+      Feature: Valid
+        Scenario: Foo
+          Given short
+          When a step under limit
+          Then another ok step
       """
      When Gherklin is ran with the following configuration
       | rules                         |

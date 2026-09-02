@@ -3,11 +3,11 @@
    Scenario: Fails by design - consecutive empty lines
      Given the following feature file
       """
- Feature: Foo
+      Feature: Foo
 
 
-   Scenario: Bar
-     Given a
+        Scenario: Bar
+          Given a
       """
      When Gherklin is ran with the following configuration
       | rules                                |
@@ -20,10 +20,10 @@
    Scenario: Passes by design - no consecutive empty lines
      Given the following feature file
       """
- Feature: Foo
+      Feature: Foo
 
-   Scenario: Bar
-     Given a
+        Scenario: Bar
+          Given a
       """
      When Gherklin is ran with the following configuration
       | rules                                |

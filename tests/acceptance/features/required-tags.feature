@@ -3,9 +3,9 @@
    Scenario: Fails by design - scenario without required tag
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Bar
-     Given a
+      Feature: Foo
+        Scenario: Bar
+          Given a
       """
      When Gherklin is ran with the following configuration
       | rules                              |
@@ -18,10 +18,10 @@
    Scenario: Passes by design - scenario with required tag
      Given the following feature file
       """
- Feature: Foo
-        @smoke
-   Scenario: Bar
-     Given a
+      Feature: Foo
+             @smoke
+        Scenario: Bar
+          Given a
       """
      When Gherklin is ran with the following configuration
       | rules                              |

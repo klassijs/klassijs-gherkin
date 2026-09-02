@@ -3,11 +3,11 @@
    Scenario: Invalid
      Given the following feature file
       """
- Feature: Invalid
-   Background: One
-     Given I set something up
-     Then something should be set up
-     And I confirm it was set up
+      Feature: Invalid
+        Background: One
+          Given I set something up
+          Then something should be set up
+          And I confirm it was set up
       """
      When Gherklin is ran with the following configuration
       | rules                              |
@@ -21,12 +21,12 @@
    Scenario: Valid
      Given the following feature file
       """
- Feature: Valid
-   Background: One
-     Given I set something up
-   Scenario:
-     When I do something
-     Then something has been done
+      Feature: Valid
+        Background: One
+          Given I set something up
+        Scenario:
+          When I do something
+          Then something has been done
       """
      When Gherklin is ran with the following configuration
       | rules                              |

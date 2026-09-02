@@ -16,7 +16,7 @@ export default abstract class Reporter {
     /**
      * Adds lint errors for a file, merging with any existing ones.
      */
-    public addErrors(key: string, errors?: LintError[]) {
+    public addErrors(key: string, errors?: LintError[]): void {
         const prev = this.errors.get(key) ?? []
         const next = [...(errors ?? []), ...prev]
         this.errors.set(key, next)

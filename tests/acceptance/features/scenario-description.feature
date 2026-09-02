@@ -3,9 +3,9 @@
    Scenario: Fails by design - scenario without description
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Bar
-     Given a
+      Feature: Foo
+        Scenario: Bar
+          Given a
       """
      When Gherklin is ran with the following configuration
       | rules                             |
@@ -18,12 +18,12 @@
    Scenario: Passes by design - scenario with long enough description
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Bar
+      Feature: Foo
+        Scenario: Bar
 
-          This scenario has a description that meets the minimum length.
+               This scenario has a description that meets the minimum length.
 
-     Given a
+          Given a
       """
      When Gherklin is ran with the following configuration
       | rules                                  |

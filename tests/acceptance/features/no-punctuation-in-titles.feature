@@ -3,9 +3,9 @@
    Scenario: Feature title with punctuation
      Given the following feature file
       """
- Feature: Something great!
-   Scenario: Bar
-     Given x
+      Feature: Something great!
+        Scenario: Bar
+          Given x
       """
      When Gherklin is ran with the following configuration
       | rules                            |
@@ -18,9 +18,9 @@
    Scenario: Scenario title with full stop
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Doing something.
-     Given x
+      Feature: Foo
+        Scenario: Doing something.
+          Given x
       """
      When Gherklin is ran with the following configuration
       | rules                            |
@@ -33,9 +33,9 @@
    Scenario: No punctuation passes
      Given the following feature file
       """
- Feature: Valid feature
-   Scenario: Valid scenario
-     Given x
+      Feature: Valid feature
+        Scenario: Valid scenario
+          Given x
       """
      When Gherklin is ran with the following configuration
       | rules                            |

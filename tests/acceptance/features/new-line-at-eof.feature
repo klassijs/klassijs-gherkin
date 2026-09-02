@@ -3,8 +3,8 @@
    Scenario: No new line
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: One
+      Feature: Invalid
+        Scenario: One
       """
      When Gherklin is ran with the following configuration
       | rules                        |
@@ -17,8 +17,8 @@
    Scenario: Has new line
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: One
+      Feature: Invalid
+        Scenario: One
 
       """
      When Gherklin is ran with the following configuration
@@ -29,8 +29,8 @@
    Scenario: Auto fix
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: One
+      Feature: Invalid
+        Scenario: One
       """
      When Gherklin is ran with the following configuration
       | rules                        | fix  |

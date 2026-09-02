@@ -3,10 +3,10 @@
    Scenario: Invalid
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: Doing something
-     Given I do something
-     Then I should have done something
+      Feature: Invalid
+        Scenario: Doing something
+          Given I do something
+          Then I should have done something
       """
      When Gherklin is ran with the following configuration
       | rules                        |
@@ -19,10 +19,10 @@
    Scenario: Valid
      Given the following feature file
       """
- Feature: Valid
-   Scenario: Doing something
-     When I do something
-     Then I should have done something
+      Feature: Valid
+        Scenario: Doing something
+          When I do something
+          Then I should have done something
       """
      When Gherklin is ran with the following configuration
       | rules                        |

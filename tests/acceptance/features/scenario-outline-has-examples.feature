@@ -3,11 +3,11 @@
    Scenario: Fails by design - outline without examples
      Given the following feature file
       """
- Feature: Foo
-   Scenario Outline: Bar
-     Given <x>
-     When I do thing
-     Then result
+      Feature: Foo
+        Scenario Outline: Bar
+          Given <x>
+          When I do thing
+          Then result
       """
      When Gherklin is ran with the following configuration
       | rules                                      |
@@ -20,12 +20,12 @@
    Scenario: Passes by design - outline with examples
      Given the following feature file
       """
- Feature: Foo
-   Scenario Outline: Bar
-     Given <x>
-     Examples:
-            | x   |
-            | one |
+      Feature: Foo
+        Scenario Outline: Bar
+          Given <x>
+          Examples:
+                 | x   |
+                 | one |
       """
      When Gherklin is ran with the following configuration
       | rules                                      |

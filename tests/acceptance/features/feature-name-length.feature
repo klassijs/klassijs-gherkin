@@ -3,9 +3,9 @@
    Scenario: Invalid - feature name too long
      Given the following feature file
       """
- Feature: This is an extremely long feature name that exceeds the limit
-   Scenario: One
-     Given x
+      Feature: This is an extremely long feature name that exceeds the limit
+        Scenario: One
+          Given x
       """
      When Gherklin is ran with the following configuration
       | rules                        |
@@ -18,9 +18,9 @@
    Scenario: Valid
      Given the following feature file
       """
- Feature: Short name
-   Scenario: One
-     Given x
+      Feature: Short name
+        Scenario: One
+          Given x
       """
      When Gherklin is ran with the following configuration
       | rules                                    |

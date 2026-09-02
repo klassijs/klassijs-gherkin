@@ -3,13 +3,13 @@
    Scenario: Placeholder in steps but not in Examples
      Given the following feature file
       """
- Feature: Foo
-   Scenario Outline: Bar
-     Given I have <X>
-     When I use <Y>
-     Examples:
-            | X   |
-            | one |
+      Feature: Foo
+        Scenario Outline: Bar
+          Given I have <X>
+          When I use <Y>
+          Examples:
+                 | X   |
+                 | one |
       """
      When Gherklin is ran with the following configuration
       | rules                                |
@@ -22,10 +22,10 @@
    Scenario: Placeholder in Examples but not in steps
      Given the following feature file
       """
- Feature: Foo
-   Scenario Outline: Bar
-     Given I have <X>
-     Examples:
+      Feature: Foo
+        Scenario Outline: Bar
+          Given I have <X>
+          Examples:
             | X   | Z   |
             | one | two |
       """
@@ -40,13 +40,13 @@
    Scenario: Consistent placeholders
      Given the following feature file
       """
- Feature: Foo
-   Scenario Outline: Bar
-     Given I have <X>
-     When I see <Y>
-     Examples:
-            | X   | Y   |
-            | one | two |
+      Feature: Foo
+        Scenario Outline: Bar
+          Given I have <X>
+          When I see <Y>
+          Examples:
+                 | X   | Y   |
+                 | one | two |
       """
      When Gherklin is ran with the following configuration
       | rules                                |
