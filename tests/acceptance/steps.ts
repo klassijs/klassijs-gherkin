@@ -1,27 +1,33 @@
-import { existsSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, rmSync, writeFileSync, mkdirSync } from 'node:fs'
 import { Given, DataTable, When, Then, After, Before } from '@cucumber/cucumber'
 import { expect } from 'chai'
 import { v4 } from 'uuid'
 
 import { Runner } from '../../src/index'
 import { GherklinConfiguration } from '../../src/types'
-import { mkdirSync } from 'fs'
 import path from 'node:path'
 
 After(function () {
-  this.featureFiles.forEach((featureFile) => {
-    rmSync(featureFile)
-  })
+  delete process.env.GHERKLIN_FEATURE_FILES
+  delete process.env.GHERKLIN_FEATURE_DIR
+
+  if (Array.isArray(this.featureFiles)) {
+    this.featureFiles.forEach((featureFile: string) => {
+      if (existsSync(featureFile)) {
+        rmSync(featureFile)
+      }
+    })
+    this.featureFiles = []
+  }
 })
 
 Before(function () {
   this.tmpLocation = path.resolve(import.meta.dirname, './tmp')
-  if (!existsSync(this.tmpLocation)) {
-    mkdirSync(this.tmpLocation)
+  if (existsSync(this.tmpLocation)) {
+    rmSync(this.tmpLocation, { recursive: true, force: true })
   }
-  if (!Array.isArray(this.featureFiles)) {
-    this.featureFiles = []
-  }
+  mkdirSync(this.tmpLocation, { recursive: true })
+  this.featureFiles = []
 })
 
 Given('the following feature file', function (featureContent: string): void {
@@ -46,7 +52,6 @@ Given('the following feature files', function (table: DataTable): void {
 
 When('Gherklin is ran with the following configuration', async function (table: DataTable): Promise<void> {
   const config: GherklinConfiguration = {
-    featureDirectory: path.resolve(import.meta.dirname, './tmp'),
     configDirectory: import.meta.dirname,
     reporter: {
       configDirectory: import.meta.dirname,
@@ -61,6 +66,8 @@ When('Gherklin is ran with the following configuration', async function (table: 
     })
   })
 
+  process.env.GHERKLIN_FEATURE_FILES = this.featureFiles.join(',')
+
   const runner = new Runner(config)
   await runner.init()
   this.runResult = await runner.run()
@@ -73,7 +80,7 @@ Then('there is/are {int} file(s) with errors', function (amount: number): void {
 Then('the error(s) are/is', function (table: DataTable): void {
   const errors = []
   expect(this.runResult.errors.size).to.be.greaterThan(0)
-  this.featureFiles.forEach((featureFile) => {
+  this.featureFiles.forEach((featureFile: string) => {
     if (this.runResult.errors.has(featureFile)) {
       errors.push(...this.runResult.errors.get(featureFile))
     }
@@ -98,7 +105,7 @@ Then('the error(s) are/is', function (table: DataTable): void {
 })
 
 Then('the file has the content', function (table: DataTable) {
-  this.featureFiles.forEach((featureFile) => {
+  this.featureFiles.forEach((featureFile: string) => {
     const content = readFileSync(featureFile, { encoding: 'utf-8' })
     const lines = content.split(/\r\n|\r|\n/)
     table.hashes().forEach((hash) => {

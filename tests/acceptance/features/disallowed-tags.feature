@@ -4,7 +4,7 @@
      Given the following feature file
       """
       @testing
- Feature: Invalid Tag
+      Feature: Invalid Tag
       """
      When Gherklin is ran with the following configuration
       | rules                                  |
@@ -17,8 +17,8 @@
    Scenario: Valid Tags
      Given the following feature file
       """
-      @valid
- Feature: Valid Tag
+           @valid
+      Feature: Valid Tag
       """
      When Gherklin is ran with the following configuration
       | rules                                  |

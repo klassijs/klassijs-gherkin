@@ -31,8 +31,8 @@
     }
   },
   "scripts": {
-    "test": "mocha",
-    "test:unit": "mocha",
+    "test": "node --import tsx scripts/run-unit-tests.mjs",
+    "test:unit": "node --import tsx scripts/run-unit-tests.mjs",
     "acceptance": "node --import tsx ./node_modules/@cucumber/cucumber/bin/cucumber-js --config tests/acceptance/cucumber.mjs",
     "eslint": "eslint",
     "eslint:fix": "eslint --fix",

@@ -3,17 +3,10 @@ import path from 'node:path';
 import Handlebars from 'handlebars';
 import Reporter from './reporter.js';
 import { Severity } from '../types.js';
-import { fileURLToPath } from 'node:url';
-
 const TOP_RULES_COUNT = 6;
 export default class HTMLReporter extends Reporter {
     write = () => {
-		    const __filename = fileURLToPath(import.meta.url); //import.meta.dirname
-		    const __dirname = path.dirname(__filename);
-		    const templateHTML = readFileSync(
-			    path.join(__dirname, './template.html'),
-			    { encoding: 'utf-8' }
-		    );
+        const templateHTML = readFileSync(path.join(import.meta.dirname, './template.html'), { encoding: 'utf-8' });
         const template = Handlebars.compile(templateHTML);
         const values = {
             title: this.config?.title || 'Gherklin Report',

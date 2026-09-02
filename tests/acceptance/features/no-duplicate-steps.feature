@@ -3,12 +3,12 @@
    Scenario: Fails by design - duplicate step in scenario
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Bar
-     Given I am logged in
-     When I do something
-     Given I am logged in
-     Then I see result
+      Feature: Foo
+        Scenario: Bar
+          Given I am logged in
+          When I do something
+          Given I am logged in
+          Then I see result
       """
      When Gherklin is ran with the following configuration
       | rules                           |
@@ -21,11 +21,11 @@
    Scenario: Passes by design - no duplicate steps
      Given the following feature file
       """
- Feature: Foo
-   Scenario: Bar
-     Given I am logged in
-     When I do something
-     Then I see result
+      Feature: Foo
+        Scenario: Bar
+          Given I am logged in
+          When I do something
+          Then I see result
       """
      When Gherklin is ran with the following configuration
       | rules                           |

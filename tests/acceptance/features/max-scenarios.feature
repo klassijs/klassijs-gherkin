@@ -3,9 +3,9 @@
    Scenario: Invalid Scenario Count
      Given the following feature file
       """
- Feature: Invalid
-   Scenario: One
-   Scenario: Two
+      Feature: Invalid
+        Scenario: One
+        Scenario: Two
       """
      When Gherklin is ran with the following configuration
       | rules                           |
@@ -18,9 +18,9 @@
    Scenario: Valid Scenario Count
      Given the following feature file
       """
- Feature: Valid
-   Scenario: One
-   Scenario: Two
+      Feature: Valid
+        Scenario: One
+        Scenario: Two
       """
      When Gherklin is ran with the following configuration
       | rules                           |

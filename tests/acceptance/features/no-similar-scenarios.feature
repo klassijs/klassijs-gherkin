@@ -3,14 +3,14 @@
    Scenario: Scenarios > 90% similar
      Given the following feature file
       """
- Feature: Similar Scenarios
-   Scenario: Scenario 1
-     When something happens
-     Then something has happened
+      Feature: Similar Scenarios
+        Scenario: Scenario 1
+          When something happens
+          Then something has happened
 
-   Scenario: Scenario 2
-     When something happens
-     Then something will have happened
+        Scenario: Scenario 2
+          When something happens
+          Then something will have happened
       """
      When Gherklin is ran with the following configuration
       | rules                                   |

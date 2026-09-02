@@ -3,9 +3,9 @@
    Scenario: Contains Full Stop
      Given the following feature file
       """
- Feature: Some feature
-     When I do something
-     Then something has happened.
+      Feature: Some feature
+          When I do something
+          Then something has happened.
       """
      When Gherklin is ran with the following configuration
       | rules                     |
@@ -21,9 +21,9 @@
 
      Given the following feature file
       """
- Feature: Some feature
-     When I do something
-     Then something has happened.
+      Feature: Some feature
+          When I do something
+          Then something has happened.
       """
      When Gherklin is ran with the following configuration
       | rules                     |
@@ -36,9 +36,9 @@
    Scenario: Auto fix
      Given the following feature file
       """
- Feature: Some feature
-     When I do something
-     Then something has happened.
+      Feature: Some feature
+          When I do something
+          Then something has happened.
       """
      When Gherklin is ran with the following configuration
       | rules                     | fix  |

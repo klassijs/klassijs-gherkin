@@ -12,11 +12,11 @@ import Config from './config.js'
  * then .ts (source, useful during local dev).
  */
 function resolveWithJsThenTs(base: string, rel: string): string | null {
-    const asJs = path.resolve(base, `${rel}.js`)
-    if (existsSync(asJs)) return asJs
-
     const asTs = path.resolve(base, `${rel}.ts`)
     if (existsSync(asTs)) return asTs
+
+    const asJs = path.resolve(base, `${rel}.js`)
+    if (existsSync(asJs)) return asJs
 
     return null
 }

@@ -3,12 +3,12 @@
    Scenario: Splat in Scenario
      Given the following feature file
       """
- Feature: Keywords in Logical Order
-   Scenario: Invalid
-     When I create one thing
+      Feature: Keywords in Logical Order
+        Scenario: Invalid
+          When I create one thing
           * and another
           * and another another
-     Then 3 things are created
+          Then 3 things are created
       """
      When Gherklin is ran with the following configuration
       | rules                       |
@@ -22,13 +22,13 @@
    Scenario: Splat in Background
      Given the following feature file
       """
- Feature: Keywords in Logical Order
-   Background:
-     Given I create one thing
-          * and another
-   Scenario: Invalid
-     When I create one thing
-     Then 3 things are created
+      Feature: Keywords in Logical Order
+        Background:
+          Given I create one thing
+               * and another
+        Scenario: Invalid
+          When I create one thing
+          Then 3 things are created
       """
      When Gherklin is ran with the following configuration
       | rules                       |

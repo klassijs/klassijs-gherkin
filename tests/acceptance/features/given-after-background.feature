@@ -3,13 +3,13 @@
    Scenario: Invalid
      Given the following feature file
       """
- Feature: Given After Background
-   Background:
-     Given I set something up
-          * and another thing
+      Feature: Given After Background
+        Background:
+          Given I set something up
+               * and another thing
 
-   Scenario:
-     Given something else is set up
+        Scenario:
+          Given something else is set up
       """
      When Gherklin is ran with the following configuration
       | rules                            |
@@ -22,13 +22,13 @@
    Scenario: Valid
      Given the following feature file
       """
- Feature: Valid
-   Background:
-     Given I set something up
-          * and another thing
+      Feature: Valid
+        Background:
+          Given I set something up
+               * and another thing
 
-   Scenario:
-     When I take an action
+        Scenario:
+          When I take an action
       """
      When Gherklin is ran with the following configuration
       | rules                            |
@@ -38,10 +38,10 @@
    Scenario: No Background
      Given the following feature file
       """
- Feature: Valid
-   Scenario:
-     Given I set something up
-     When I take an action
+      Feature: Valid
+        Scenario:
+          Given I set something up
+          When I take an action
       """
      When Gherklin is ran with the following configuration
       | rules                            |
