@@ -50,6 +50,7 @@ export const offOrKeywordIntsOrSeverityAndKeywordInts = z.union([
 export const offOrNumberOrSeverityAndNumber = z.union([
   z.literal(Switch.off),
   z.number(),
+  z.nativeEnum(Severity),
   z.tuple([z.nativeEnum(Severity), z.number()]),
 ])
 export const offOrNumberOrSeverityOrSeverityAndNumber = z.union([

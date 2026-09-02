@@ -6,5 +6,6 @@ tests/acceptance/tmp
 examples/*
 !examples/features/
 !examples/features/**
+src/**/*.js
 .DS_Store
 .pnpm-store

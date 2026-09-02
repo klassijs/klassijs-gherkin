@@ -144,12 +144,12 @@ export default class Config {
             '.config/gherklinrc.cjs',
 
             // dedicated config files at root
+            'gherklin.config.yaml',
+            'gherklin.config.yml',
             'gherklin.config.ts',
             'gherklin.config.js',
             'gherklin.config.mjs',
             'gherklin.config.cjs',
-            'gherklin.config.yaml',
-            'gherklin.config.yml',
 
             // dedicated config files under .config/
             '.config/gherklin.config.ts',
