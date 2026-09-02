@@ -39,7 +39,7 @@ export function parseArgs(argv: string[]): CliArgs {
     return args;
 }
 
-export function printHelp() {
+export function printHelp(): void {
     // Keep it compact; README will have full docs
     console.log(`
 Usage: gherklin [options]

@@ -200,7 +200,7 @@ async function findNearestLooseInDir<TConfig = unknown>(
     // seed: all immediate subdirs of dir
     enqueueSubdirs(dir, 0)
 
-    function enqueueSubdirs(base: string, depth: number) {
+    function enqueueSubdirs(base: string, depth: number): void {
         let entries: import('fs').Dirent[]
         try {
             entries = readdirSync(base, { withFileTypes: true })
