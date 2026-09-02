@@ -4,7 +4,7 @@
 reporter:
   type: 'html'
   outFile: 'gherklin-report.html'
-featureDirectory: './tests/acceptance/features'
+featureDirectory: './examples/features'
 rules:
   indentation:
     - 'warn'

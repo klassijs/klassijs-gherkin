@@ -7,7 +7,7 @@ reporter:
     outFile: './reports/gherklin.json'
   - type: 'html'
     outFile: './reports/gherklin.html'
-featureDirectory: './tests/acceptance/features'
+featureDirectory: './examples/features'
 rules:
   indentation:
     - 'error'
@@ -35,4 +35,3 @@ rules:
   aligned-datatables: 'warn'
   scenario-description: ['error', 10]
   feature-name-length: ['error', 20]
-fix: true
