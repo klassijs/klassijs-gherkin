@@ -35,7 +35,7 @@ export default class Schema {
     validate(zodSchema) {
         const result = zodSchema.safeParse(this.rawSchema);
         if (!result.success) {
-            return result.error.format()?._errors;
+            return result.error.issues.map((issue) => issue.message);
         }
         return [];
     }
