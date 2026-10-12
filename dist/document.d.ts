@@ -1,4 +1,4 @@
-import { Feature, GherkinDocument } from '@cucumber/messages';
+import { type Feature, type GherkinDocument } from '@cucumber/messages';
 import { LintError, Location } from './types.js';
 import Line from './line.js';
 import Rule from './rule.js';
