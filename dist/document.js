@@ -1,12 +1,23 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { Feature, IdGenerator } from '@cucumber/messages';
-import Gherkin from '@cucumber/gherkin';
+import { IdGenerator } from '@cucumber/messages';
+import { AstBuilder, GherkinClassicTokenMatcher, Parser } from '@cucumber/gherkin';
 import { writeFileSync } from 'node:fs';
 import Line from './line.js';
+function emptyFeature() {
+    return {
+        location: { line: 0, column: 0 },
+        tags: [],
+        language: '',
+        keyword: '',
+        name: '',
+        description: '',
+        children: [],
+    };
+}
 export default class Document {
     filename;
-    feature = new Feature();
+    feature = emptyFeature();
     path;
     // Definite assignment (!) – set when parseGherkin() runs
     gherkinDocument;
@@ -40,9 +51,9 @@ export default class Document {
         this.getDisabledRules();
     };
     parseGherkin = (content) => {
-        const builder = new Gherkin.AstBuilder(IdGenerator.uuid());
-        const matcher = new Gherkin.GherkinClassicTokenMatcher();
-        const parser = new Gherkin.Parser(builder, matcher);
+        const builder = new AstBuilder(IdGenerator.uuid());
+        const matcher = new GherkinClassicTokenMatcher();
+        const parser = new Parser(builder, matcher);
         this.gherkinDocument = parser.parse(content.toString());
         if (this.gherkinDocument.feature) {
             this.feature = this.gherkinDocument.feature;
